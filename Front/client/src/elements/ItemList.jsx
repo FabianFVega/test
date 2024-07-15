@@ -9,6 +9,8 @@ const ItemList = ({ comic }) => {
         <h5>{comic.name  || comic.volume.name || "No Title Available"}</h5>
         <p><strong>Issue Number:</strong> {comic.issue_number}</p>
         <p><strong>Cover Date:</strong> {comic.cover_date}</p>
+        <a href={comic.site_detail_url} className="btn btn-primary" target="_blank" rel="noopener noreferrer">More Details</a>
+
         
       </div>
     </div>

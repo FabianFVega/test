@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ItemCard = ({ comic }) => {
   return (
@@ -8,6 +9,7 @@ const ItemCard = ({ comic }) => {
         <h5 className="card-title">{comic.name || comic.volume.name || "Not title"}</h5>
        
         <a href={comic.site_detail_url} className="btn btn-primary" target="_blank" rel="noopener noreferrer">More Details</a>
+        
       </div>
     </div>
   );

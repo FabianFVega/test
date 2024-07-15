@@ -33,7 +33,7 @@ const PrincipalList = () => {
   return (
     <div className="container justify-content-center margin auto">
       <MyLogo/>
-      <h1>Take a look for the best animes and comics in the wordl</h1>
+      <h1>Take a look for the best animes and comics in the world</h1>
       <div className="d-flex justify-content-center p-5">
         <button className="btn btn-primary m-3" onClick={() => setView('grid')}>Grid View</button>
         <button className="btn btn-primary m-3" onClick={() => setView('list')}>List View</button>
