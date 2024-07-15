@@ -2,7 +2,7 @@ import React from 'react';
 
 const ItemCard = ({ comic }) => {
   return (
-    <div className="card mb-3" style={{ width: '18rem' }}>
+    <div className="card mb-3 justify-content-center align-items-center" style={{ width: '18rem' }}>
       <img src={comic.image.medium_url} className="card-img-top" alt={comic.name || "No Image Available"} />
       <div className="card-body">
         <h5 className="card-title">{comic.name || comic.volume.name || "Not title"}</h5>

@@ -3,14 +3,17 @@
   margin: 0 auto;
   background-color: black;
   text-align: center;
-  padding: 0;
+  padding: 0rem;
   box-sizing: border-box;
+  align-items: center;
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  align-items: center;
+  background-color:black;
 }
 
 .navbar {
@@ -18,14 +21,20 @@ body {
 }
 
 .container {
-  max-width: 1200px;
   margin: 0 auto;
+  background-color: black;
+  text-align: center;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+  align-items: center;
 }
 
 
 
 .card {
   padding: 2em;
+  align-items: center;
 }
 
 .read-the-docs {
