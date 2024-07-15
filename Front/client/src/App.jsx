@@ -35,36 +35,25 @@
 // export default App
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import ItemCard from './elements/ItemCard';
+import ItemList from './elements/ItemList';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-// Componente para mostrar cada cómic
-const ComicCard = ({ comic }) => {
-  return (
-    <div className="comic-card">
-      <h2>{comic.name || "No Title Available"}</h2>
-      <img src={comic.image.medium_url} alt={comic.name || "No Image Available"} />
-      <p><strong>Issue Number:</strong> {comic.issue_number}</p>
-      <p><strong>Cover Date:</strong> {comic.cover_date}</p>
-      <p dangerouslySetInnerHTML={{ __html: comic.description || "No Description Available" }} />
-      <a href={comic.site_detail_url} target="_blank" rel="noopener noreferrer">More Details</a>
-    </div>
-  );
-};
-
-// Componente principal
 const App = () => {
   const [comics, setComics] = useState([]);
+  const [view, setView] = useState('grid');
   const [error, setError] = useState(null);
 
   useEffect(() => {
     axios.get('http://localhost:3000/comics')
-      .then((response) => {
+      .then(response => {
         if (response.data.error === "OK") {
           setComics(response.data.results);
         } else {
           setError("Error fetching comics data.");
         }
       })
-      .catch((error) => {
+      .catch(error => {
         console.error('Error fetching data:', error);
         setError('Error fetching data.');
       });
@@ -75,15 +64,24 @@ const App = () => {
   }
 
   return (
-    <div className="comic-list">
-      {comics.map((comic) => (
-        <ComicCard key={comic.id} comic={comic} />
-      ))}
+    <div className="container mt-4">
+      <div className="d-flex justify-content-between">
+        <button className="btn btn-primary" onClick={() => setView('grid')}>Grid View</button>
+        <button className="btn btn-primary" onClick={() => setView('list')}>List View</button>
+      </div>
+      <div className={view === 'grid' ? 'row' : 'list-group'}>
+        {comics.map(comic =>
+          view === 'grid' ? (
+            <div key={comic.id} className="col-md-4">
+              <ItemCard comic={comic} />
+            </div>
+          ) : (
+            <ItemList key={comic.id} comic={comic} />
+          )
+        )}
+      </div>
     </div>
   );
 };
 
-
-
 export default App;
-
