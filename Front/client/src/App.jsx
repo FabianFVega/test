@@ -37,6 +37,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ItemCard from './elements/ItemCard';
 import ItemList from './elements/ItemList';
+import Navbar from './elements/nav'; 
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
@@ -64,8 +66,9 @@ const App = () => {
   }
 
   return (
-    <div className="container mt-4">
-      <div className="d-flex justify-content-between">
+    <div className="container mt-4 justify-content-center">
+      <Navbar />
+      <div className="d-flex justify-content-center  ">
         <button className="btn btn-primary" onClick={() => setView('grid')}>Grid View</button>
         <button className="btn btn-primary" onClick={() => setView('list')}>List View</button>
       </div>
