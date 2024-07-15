@@ -1,6 +1,11 @@
 # TEST 
 
+imagen de como se debe ver el proyecto cuando se haya realizado el git clone, correctamente
+![image](https://github.com/user-attachments/assets/b7eb7a98-9312-40df-9f65-2f8ec298d361)
+
+
 Descripción breve del proyecto.
+
 
 ## Requisitos Previos
 
